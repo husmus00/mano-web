@@ -1,7 +1,7 @@
 ﻿@page "/machine"
 <div class="wrapper-div">
-    <h3>Machine</h3>
     <div class="machine-container">
+        <h3>Machine</h3>
         <div class="input-output-windows">
             <div class="input-container">
                 <div class="program-input box">
@@ -12,9 +12,13 @@
                 </div>
                 <div class="command-input box">
                     <p>Command Input</p>
-                    <div style="display: flex;">
+                    <div class="command-input-line">
                         <p>>></p>
-                        <InputText @bind-Value="commandInput" c/>
+                        <div>
+                            <EditForm Model="@exampleModel" OnSubmit="@HandleCommandSubmit" class="programTextForm">
+                                <InputText @bind-Value="commandInput" class="command-input-textbox" />
+                            </EditForm>
+                        </div>
                         <div class="run-command-button" @onclick="HandleCommandSubmit">Run Command</div>
                     </div>
                 </div>
@@ -59,8 +63,8 @@
         if (!string.IsNullOrEmpty(commandInput))
         {
             outputText += (">> " + commandInput + "\n");
-            commandInput = "";
             ComputerConsole.ParseCommand(commandInput);
+            commandInput = "";
         }
     }
 

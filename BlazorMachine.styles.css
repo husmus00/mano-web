@@ -4,13 +4,14 @@
     margin: 5px;
     padding: 0.6em;
     font-family: Consolas;
+    border-radius: 5px;
 }
 
 .wrapper-div[b-jjkl8powbm] {
     min-height: 100%;
     display: flex;
-    flex-direction: column;
     padding: 10px;
+    flex-direction: column;
 }
 
 .machine-container[b-jjkl8powbm] {
@@ -19,7 +20,16 @@
     height: 100%;
     width: 100%;
     flex-grow: 1;
+    max-width: 1300px;
+    margin: auto;
 }
+
+/*@media screen and (min-width: 1400px) {
+
+    .machine-container {
+        max-width: 1400px
+    }
+}*/
 
 .machine-container h2[b-jjkl8powbm] {
     font-size: 1.2em;
@@ -50,6 +60,28 @@
     flex-grow: 1;
 }
 
+.command-input-line[b-jjkl8powbm] {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5em;
+}
+
+.command-input-form[b-jjkl8powbm] {
+    flex: 1 1 0px;
+}
+
+.run-command-button[b-jjkl8powbm] {
+    padding: 0.2em 0.8em;
+    border: 2px solid black;
+}
+
+.run-command-button:hover[b-jjkl8powbm] {
+    opacity: 60%;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+
 .output-container[b-jjkl8powbm] {
     flex: 1 1 0px;
     display: flex;
@@ -62,14 +94,15 @@
 
 .controls[b-jjkl8powbm] {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .button[b-jjkl8powbm] {
     border: 2px solid black;
     margin: 10px;
-    padding: 10px;
-    flex: 1 1 0px;
+    padding: 10px 3em;
+    /*flex: 1 1 0px;*/
     text-align: center;
 }
 

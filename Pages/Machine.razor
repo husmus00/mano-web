@@ -1,0 +1,94 @@
+﻿@page "/machine"
+<div class="wrapper-div">
+    <h3>Machine</h3>
+    <div class="machine-container">
+        <div class="input-output-windows">
+            <div class="input-container">
+                <div class="program-input box">
+                    <p>Program Input</p>
+                    <EditForm Model="@exampleModel" OnSubmit="@HandleInputSubmit" class="programTextForm">
+                        <InputTextArea @bind-Value="programInput" class="programTextArea" />
+                    </EditForm>
+                </div>
+                <div class="command-input box">
+                    <p>Command Input</p>
+                    <div style="display: flex;">
+                        <p>>></p>
+                        <InputText @bind-Value="commandInput" c/>
+                        <div class="run-command-button" @onclick="HandleCommandSubmit">Run Command</div>
+                    </div>
+                </div>
+            </div>
+            <div class="output-container box">
+                <p>Output</p>
+                <textarea readonly class="outputTextArea">@outputText</textarea>
+            </div>
+        </div>
+        <div class="controls box">
+            <div class="button">Load</div>
+            <div class="button" @onclick="PrintButton">Print</div>
+            <div class="button" @onclick="AssembleButton">Assemble</div>
+            <div class="button" @onclick="RunButton">Run</div>
+            <div class="button" @onclick="ClearButton">Clear</div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    string programInput = "";
+    string commandInput = "";
+    public static string outputText = "";
+
+    public class ExampleModel
+    {
+        public string? Name { get; set; }
+    }
+
+    private ExampleModel exampleModel = new();
+
+    private ExampleModel exampleModel2 = new();
+
+    private void HandleInputSubmit()
+    {
+        RunButton();
+    }
+
+    private void HandleCommandSubmit()
+    {
+        if (!string.IsNullOrEmpty(commandInput))
+        {
+            outputText += (">> " + commandInput + "\n");
+            commandInput = "";
+            ComputerConsole.ParseCommand(commandInput);
+        }
+    }
+
+    private void HandleOutputSubmit()
+    {
+        RunButton();
+    }
+
+    private void PrintButton()
+    {
+        ComputerConsole.ParseCommand("print");
+    }
+
+    private void RunButton()
+    {
+        ComputerConsole.ParseCommand("run");
+    }
+
+    private void AssembleButton()
+    {
+        Computer.AssembleFromGUI(programInput);
+    }
+
+    private void ClearButton()
+    {
+        ComputerConsole.ParseCommand("clear");
+        outputText = "";
+    }
+
+    Computer c = new Computer();
+}

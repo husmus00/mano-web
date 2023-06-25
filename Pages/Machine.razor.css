@@ -1,0 +1,79 @@
+﻿.box {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 0.6em;
+    font-family: Consolas;
+}
+
+.wrapper-div {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.machine-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.machine-container h2 {
+    font-size: 1.2em;
+}
+
+.input-output-windows {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+
+    .input-output-windows {
+        flex-direction: row;
+    }
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+}
+
+.program-input {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.output-container {
+    flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.outputTextArea {
+    overflow: auto;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    flex: 1 1 0px;
+    text-align: center;
+}
+
+.button:hover {
+    opacity: 60%;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}

@@ -1,21 +1,33 @@
 ﻿@page "/machine"
 <div class="wrapper-div">
     <div class="machine-container">
-        <h3>Machine</h3>
+        <div class="title-bar">
+            <h3>Machine</h3>
+        </div>
         <div class="input-output-windows">
             <div class="input-container">
                 <div class="program-input box">
-                    <p>Program Input</p>
-                    <EditForm Model="@exampleModel" OnSubmit="@HandleInputSubmit" class="programTextForm">
-                        <InputTextArea @bind-Value="programInput" class="programTextArea" />
-                    </EditForm>
+                    <div class="window-title-container">
+                        <p class="window-title">Program Input</p>
+                        <div class="hr-lines"></div>
+                        <span>&#9781</span>
+                    </div>
+                    <div class="box-content">
+                        <EditForm Model="@exampleModel" OnSubmit="@HandleInputSubmit" class="programTextForm">
+                            <InputTextArea @bind-Value="programInput" class="programTextArea" />
+                        </EditForm>
+                    </div>
                 </div>
                 <div class="command-input box">
-                    <p>Command Input</p>
-                    <div class="command-input-line">
+                    <div class="window-title-container">
+                        <p class="window-title">Command Input</p>
+                        <div class="hr-lines"></div>
+                        <span>&#9781</span>
+                    </div>
+                    <div class="box-content command-input-line">
                         <p>>></p>
-                        <div>
-                            <EditForm Model="@exampleModel" OnSubmit="@HandleCommandSubmit" class="programTextForm">
+                        <div class="command-textbox-div">
+                            <EditForm Model="@exampleModel" OnSubmit="@HandleCommandSubmit" class="command-input-form">
                                 <InputText @bind-Value="commandInput" class="command-input-textbox" />
                             </EditForm>
                         </div>
@@ -24,11 +36,17 @@
                 </div>
             </div>
             <div class="output-container box">
-                <p>Output</p>
-                <textarea readonly class="outputTextArea">@outputText</textarea>
+                <div class="window-title-container">
+                    <p class="window-title">Output</p>
+                    <div class="hr-lines"></div>
+                    <span>&#9781</span>
+                </div>
+                <div class="box-content">
+                    <textarea readonly class="outputTextArea">@outputText</textarea>
+                </div>
             </div>
         </div>
-        <div class="controls box">
+        <div class="controls">
             <div class="button">Load</div>
             <div class="button" @onclick="PrintButton">Print</div>
             <div class="button" @onclick="AssembleButton">Assemble</div>

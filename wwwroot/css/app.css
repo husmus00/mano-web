@@ -101,6 +101,7 @@ a, .btn-link {
     }
 
 /* Custom */
+
 .content, main, body, #app, html {
     height: 100%;
     display: flex;

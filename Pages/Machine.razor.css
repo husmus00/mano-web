@@ -224,16 +224,16 @@
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.controls::-webkit-scrollbar {
+/*.controls::-webkit-scrollbar {
     display: none;
-}
+}*/
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.controls {
-    overflow-y: scroll; /* Add the ability to scroll */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
+/*.controls {
+    overflow-y: scroll;*/ /* Add the ability to scroll */
+    /*-ms-overflow-style: none;*/ /* IE and Edge */
+    /*scrollbar-width: none;*/ /* Firefox */
+/*}*/
 
 .controls {
     display: flex;
@@ -272,6 +272,10 @@
     }
 
 @media screen and (min-width: 768px) {
+
+    .controls {
+        justify-content: center;
+    }
 
     .button {
         font-size: 1em;

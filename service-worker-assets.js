@@ -185,7 +185,7 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-tWLRCgbZ\/pa5xOXPcQ7utQPXda9Mgrkc6uTEm+8wwzc=",
+      "hash": "sha256-jtc9cHeMa0nCucC0Ad14u49e4JQJmxvCXcBzvu1wB8A=",
       "url": "BlazorMachine.styles.css"
     },
     {
@@ -269,5 +269,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "qHW4p6Ev"
+  "version": "p6I\/kjhb"
 };

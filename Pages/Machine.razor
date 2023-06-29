@@ -1,11 +1,19 @@
 ﻿@page "/machine"
+<div class="help-page @((help_active? "" : "inactive"))">
+    <i @onclick="toggleHelpPage" class="fa-solid fa-xmark"></i>
+    <h3>Help:</h3>
+    <a href="https://github.com/husmus00/Mano-Machine-CSharp/blob/main/instructions.txt">Instructions</a>
+    <hr class="solid"/>
+    <h3>Example Programs:</h3>
+    <p @onclick="AdditionExample">Addition</p>
+    <p @onclick="SubtractionExample">Subtraction</p>
+</div>
 <div class="wrapper-div">
     <div class="machine-container">
         <div class="title-bar">
             <h3>BlazorMachine</h3>
             <div class="title-bar-end">
-                <p>instructions</p>
-                <p>examples</p>
+                <p @onclick="toggleHelpPage">Help</p>
                 <a href="https://github.com/husmus00/blazormachine"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
@@ -51,18 +59,39 @@
                 </div>
             </div>
         </div>
-        <div class="controls">
-            <div class="button">Load</div>
-            <div class="button" @onclick="PrintButton">Print</div>
-            <div class="button" @onclick="AssembleButton">Assemble</div>
-            <div class="button" @onclick="RunButton">Run</div>
-            <div class="button" @onclick="ClearButton">Clear</div>
+        <div class="controls-container">
+            <div class="controls">
+                <div class="button">Load</div>
+                <div class="button" @onclick="PrintButton">Print</div>
+                <div class="button" @onclick="AssembleButton">Assemble</div>
+                <div class="button" @onclick="RunButton">Run</div>
+                <div class="button" @onclick="ClearButton">Clear</div>
+            </div>
         </div>
     </div>
 </div>
 
 
 @code {
+    private bool help_active = false;
+
+    private void toggleHelpPage()
+    {
+        help_active = !help_active;
+    }
+
+    private void AdditionExample()
+    {
+        programInput = additionProgram;
+        toggleHelpPage();
+    }
+
+    private void SubtractionExample()
+    {
+        programInput = subtractionProgram;
+        toggleHelpPage();
+    }
+
     string programInput = "";
     string commandInput = "";
     public static string outputText = "";
@@ -115,7 +144,41 @@
     {
         ComputerConsole.ParseCommand("clear");
         outputText = "";
+
+
     }
 
     Computer c = new Computer();
+
+    private string additionProgram = @"   ORG 0    /Origin of program is location 0
+   LDA A    /Load operand from location A
+   ADD B    /Add operand from location B
+   STA C    /Store sum in location C
+   HLT      /Halt computer
+A, DEC 83   /Decimal operand
+B, DEC -23  /Decimal operand
+C, DEC 0    /Sum stored in location C
+   END      /End of symbolic program
+
+/ Example program to demonstrate addition.
+/ Table 6-5 page 178 ""Computer System Architecture"" 3rd Ed. Morris M. Mano.
+/ This program will add the values at lines 6,7 (Labels A,B),
+/ and store the result at line 8 (Label C)";
+
+    private string subtractionProgram = @"     ORG 0    /Origin of program is location 0
+     LDA SUB  /Load subtrahend to AC
+     CMA      /Complement AC
+     INC      /Increment AC   
+     ADD MIN  /Add minuend to AC
+     STA DIF  /Store difference
+     HLT      /Halt computer
+MIN, DEC 83   /Decimal operand
+SUB, DEC -23  /Decimal operand
+DIF, HEX 0    /Sum stored in location C
+     END      /End of symbolic program
+
+/ Example program to demonstrate subtraction.
+/ Table 6-8 page 181 ""Computer System Architecture"" 3rd Ed. Morris M. Mano.
+/ This program will subtract the values at lines 8,9 (Labels MIN,SUB),
+/ and store the result at line 10 (Label DIF)";
 }

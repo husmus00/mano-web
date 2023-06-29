@@ -1,8 +1,44 @@
 /* /Pages/Machine.razor.rz.scp.css */
+.title-bar[b-jjkl8powbm] {
+    display: flex;
+}
+
+.title-bar-end[b-jjkl8powbm] {
+    margin-left: auto;
+    transition: ease-in-out 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+    .title-bar-end p[b-jjkl8powbm] {
+        text-decoration: underline;
+        display: block;
+        margin: 0 0.5em;
+    }
+
+    .title-bar-end p:hover[b-jjkl8powbm] {
+        text-decoration: none;
+        transform:rotateX('30');
+        cursor: pointer;
+    }
+
+    .title-bar-end a[b-jjkl8powbm] {
+        font-size: 1.5em;
+        margin: 0 0.6em;
+        color: black;
+        transition: ease-in-out 0.2s;
+    }
+
+    .title-bar-end a:hover[b-jjkl8powbm] {
+        opacity: 0.5;
+    }
+
+
+
 .box[b-jjkl8powbm] {
     border: 2px solid black;
     margin: 5px;
-/*    padding: 0.6em;*/
+    /*    padding: 0.6em;*/
     font-family: Consolas;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.3) -4px 4px 5px;
@@ -42,8 +78,13 @@
     font-size: 1.2em;
 }
 
+@font-face {
+    font-family: 'digital';
+    src: url('fonts/digital-7.regular.ttf');
+}
+
 .window-title[b-jjkl8powbm] {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'digital', sans-serif;
 }
 
 .window-title-container[b-jjkl8powbm] {

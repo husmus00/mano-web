@@ -1,4 +1,4 @@
-# blazormachine
+# Mano Machine Web Emulator
 
 A web-based "port" of my [C# Mano Machine](https://github.com/husmus00/mano-machine-csharp/) project using [Blazor](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) to run the existing C# code on web browsers.
 

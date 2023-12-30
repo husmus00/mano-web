@@ -4,6 +4,6 @@ A web-based "port" of my [C# Mano Machine](https://github.com/husmus00/mano-mach
 
 The 'main' branch contains the project code, and the 'gh-pages' branch contains the generated website displayed using Github Pages.
 
-Can be viewed at <https://husmus.dev/blazormachine/>
+Can be viewed at <https://husmus.dev/mano-web/>
 
 Still a work in progress.

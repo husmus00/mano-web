@@ -18,6 +18,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 8.0.*
+
+    # Ensures all submodule files are loaded
+    - name: checkout all the submodules
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
         
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project

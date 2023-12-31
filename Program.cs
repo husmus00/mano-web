@@ -33,12 +33,12 @@ namespace Interface
     {
         public static void WriteLine()
         {
-            // Pages.Machine.outputText += Environment.NewLine;
+            ManoMachine.Pages.Machine.outputText += Environment.NewLine;
         }
 
         public static void WriteLine(string output)
         {
-            // Pages.Machine.outputText += (output + Environment.NewLine);
+            ManoMachine.Pages.Machine.outputText += (output + Environment.NewLine);
         }
 
         public static void Write(string output)

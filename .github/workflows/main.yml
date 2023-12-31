@@ -17,14 +17,14 @@ jobs:
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 7.0.*
+        dotnet-version: 8.0.*
         
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish BlazorMachine.csproj -c Release -o release --nologo
+      run: dotnet publish ManoWeb.csproj -c Release -o release --nologo
       
     # changes the base-tag in index.html from '/' to 'blazormachine' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to BlazorMachine
+    - name: Change base-tag in index.html from / to ManoWeb
       run: sed -i 's/<base href="\/" \/>/<base href="\/mano-web\/" \/>/g' release/wwwroot/index.html
     
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)

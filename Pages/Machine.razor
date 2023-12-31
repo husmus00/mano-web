@@ -1,5 +1,6 @@
 ﻿
-@page "/machine"
+@page "/"
+
 <div class="help-page @((help_active? "" : "inactive"))">
     <i @onclick="toggleHelpPage" class="fa-solid fa-xmark"></i>
     <h3>Help:</h3>
@@ -149,7 +150,7 @@
 
     }
 
-    Computer c = new Computer();
+    Computer c = new Computer("web");
 
     private string additionProgram = @"   ORG 0    /Origin of program is location 0
    LDA A    /Load operand from location A

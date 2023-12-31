@@ -1,0 +1,3 @@
+[submodule "mano-src"]
+	path = mano-src
+	url = https://github.com/husmus00/mano-src

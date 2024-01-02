@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ManoMachine",
   "resources": {
-    "hash": "sha256-l/7TlbDGT5LKDkJ+k/e7psair9PeyPrh2eliqumUfyo=",
+    "hash": "sha256-4aZZEXHBWV3pFf+NiCLUs2nMfDIc2I3ypmn4NZ3bI8Y=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.45ykigla5r.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "ManoMachine.wasm": "sha256-hM+mg+wAFRgkw0PUACU/MZNWnvCnibzL/g/eFqI5JMY=",
+      "ManoMachine.wasm": "sha256-VnW6d9R8Pn+rB4+gFh4YhXqhJwttEJw7zmko06+BA3s=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-VZvXsc7Z8ozEegTANUzcc0bf+XYP+KerG0T3BZVDIKA=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-1VA7d/h70zY/+8stnNKWFaMuqLrY7iIABsTyFtM4UDc=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-/dQ8QLG3CH+C2yCLkOFsvEhLv+ib18R05uDBWkakPrM=",
